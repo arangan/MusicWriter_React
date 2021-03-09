@@ -1,0 +1,33 @@
+
+/****** header component ******/
+.headerGrid {
+            font-family: 'siddhanta';
+            font-size: 25px;
+            display: grid;
+            grid-template-columns: max-content max-content max-content auto max-content max-content;
+            grid-gap: 7px;
+            /* background-color: black; */
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+.headerGrid > div {
+    background-color: white;
+}
+.headerGrid .logo {
+    grid-column-start: span 6;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.rightAlign {
+    text-align: right;
+}
+.underLine {
+    border-bottom: 1px solid black; 
+}
+.colon {
+    padding-left:3px;
+    padding-right: 5px;
+    /* border:solid 1px black; */
+}
+/****** end -- header component *****/

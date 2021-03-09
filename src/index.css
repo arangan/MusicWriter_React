@@ -1,0 +1,24 @@
+@font-face {
+  font-family: siddhanta;
+  src:url("./fonts/siddhanta.ttf");
+}
+
+body {
+  margin: 0;
+  /* font-family: 'siddhanta', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+  font-family: 'siddhanta';
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.symbolLogo {
+  font-family: 'siddhanta';
+  background-color: yellow;
+}
