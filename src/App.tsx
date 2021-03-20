@@ -14,7 +14,6 @@ function App() {
     aroh:'नि᳝ सा रे॒ म॔ प नि सां',
     avroh:'सां नि ध॒ प म॔ ग रे॒ ग रे॒ रे॒ सा'
   };
-  // let documentHeader:DocumentHeader = new DocumentHeader(docHeaderProp);
   return (
     <>
       <DocumentHeader {...docHeaderProp} />

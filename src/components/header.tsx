@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 
-type IDocumentHeader = {
+interface IDocumentHeader  {
     symbol?:string;
     raag?:string;
     taal?:string;
@@ -10,10 +10,14 @@ type IDocumentHeader = {
 
 class DocumentHeader extends Component<IDocumentHeader> {
     static defaultProps = { symbol:'உ'};
+    documentHeader:IDocumentHeader;
 
     constructor(props:IDocumentHeader) {
-        super(props);
-        this.Span_OnChange = this.Span_OnChange.bind(this);
+       super(props);
+       this.Span_OnChange = this.Span_OnChange.bind(this);
+
+       this.documentHeader = Object.assign({} as IDocumentHeader,props); 
+       this.documentHeader.symbol = this.documentHeader.symbol ?? DocumentHeader.defaultProps.symbol;
     }
 
     async Span_OnChange(evt:any)
@@ -26,9 +30,9 @@ class DocumentHeader extends Component<IDocumentHeader> {
     render() {
         return (<>
  <div className="headerGrid">
-        <div className="logo"><span className="underLine">ॐ</span></div>
-        <div><span className="underLine">राग</span></div><div className="colon">:</div><div>श्री</div> <div className="rightAlign"><span className="underLine">आराेह</span></div><div className="colon">:</div><div>नि᳝ सा रे॒ म॔ प नि सां</div>
-        <div><span className="underLine">ताल</span></div><div className="colon">:</div><div>झप</div><div className="rightAlign"><span className="underLine">अवरोह</span></div><div className="colon">:</div><div>सां नि ध॒ प म॔ ग रे॒ ग रे॒ रे॒ सा</div>
+        <div className="logo"><span className="underLine">{this.documentHeader.symbol}</span></div>
+        <div><span className="underLine">राग</span></div><div className="colon">:</div><div>{this.documentHeader.raag}</div> <div className="rightAlign"><span className="underLine">आराेह</span></div><div className="colon">:</div><div>{this.documentHeader.aroh}</div>
+        <div><span className="underLine">ताल</span></div><div className="colon">:</div><div>{this.documentHeader.taal}</div><div className="rightAlign"><span className="underLine">अवरोह</span></div><div className="colon">:</div><div>{this.documentHeader.avroh}</div>
     </div>            
         </>);
     }
