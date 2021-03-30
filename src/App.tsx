@@ -1,30 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './components/header.css';
 
-import {DocumentHeader, IDocumentHeader} from './components/header';
+import { DocumentHeader, IDocumentHeader } from './components/header';
 
 
-function App() {
-  const docHeaderProp:IDocumentHeader = { 
+class App extends Component {
+  docHeaderProp: IDocumentHeader = {
     symbol: 'ॐ',
-    raag:'श्री',
-    taal:'झप',
-    aroh:'नि᳝ सा रे॒ म॔ प नि सां',
-    avroh:'सां नि ध॒ प म॔ ग रे॒ ग रे॒ रे॒ सा'
+    raag: 'श्री',
+    taal: 'झप',
+    aroh: 'नि᳝ सा रे॒ म॔ प नि सां',
+    avroh: 'सां नि ध॒ प म॔ ग रे॒ ग रे॒ रे॒ सा'
   };
 
-  const onSaveClick = () => {
+  onSaveClick = () => {
     alert("save clicked");
   }
 
-  return (
-    <>
-      <button onClick={()=>onSaveClick() } >Save</button>
-      <DocumentHeader {...docHeaderProp} />
-    </>
-  );
+  onHeaderChange = (val:string) => {
+    // this.docHeaderProp = val;
+    alert(val);
+  }
+
+  constructor(props:any) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <>
+        <button onClick={() => this.onSaveClick()} >Save</button>
+        <DocumentHeader symbol="RAM" callback={this.onHeaderChange} />
+        {/* onHeaderChange={this.onHeaderChange} /> */}
+      </>
+    );
+  }
 }
 
 export default App;
