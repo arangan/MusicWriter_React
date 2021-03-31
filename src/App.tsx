@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './components/header.css';
+import IDocumentHeader from './interfaces/IDocumentHeader';
 
-import { DocumentHeader, IDocumentHeader } from './components/header';
+import { DocumentHeader } from './components/header';
 
+interface AppState {
+  header:IDocumentHeader
+}
 
-class App extends Component {
+class App extends Component<{},AppState> {
   docHeaderProp: IDocumentHeader = {
     symbol: 'ॐ',
     raag: 'श्री',
@@ -24,8 +28,8 @@ class App extends Component {
     alert(val);
   }
 
-  constructor(props:any) {
-    super(props);
+  constructor() {
+    
   }
 
   render() {

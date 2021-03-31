@@ -88,5 +88,6 @@
                 "commands": [ "editor.action.clipboardCopyAction" ]
 			}
 		],
+		"editor.minimap.enabled": false,
 	}
 }
